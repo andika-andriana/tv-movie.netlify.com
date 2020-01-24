@@ -1,0 +1,48 @@
+import React, { Component } from "react";
+import { Route, Router } from "react-router-dom";
+import App from "./App";
+import Callback from "./Callback/Callback";
+import Auth from "./Auth/Auth";
+import history from "./history";
+import Home from "./Component/Home";
+import Film from "./Component/Film";
+import Aktor from "./Component/Aktor";
+
+const auth = new Auth();
+
+const handleAuthentication = ({ location }) => {
+  if (/access_token|id_token|error/.test(location.hash)) {
+    auth.handleAuthentication();
+  }
+};
+
+export default class Routes extends Component {
+  render() {
+    return (
+      <Router history={history}>
+        <div>
+          <Route path="/" render={props => <App auth={auth} {...props} />} />
+          <Route
+            path="/home"
+            render={props => <Home auth={auth} {...props} />}
+          />
+          <Route
+            path="/film"
+            render={props => <Film auth={auth} {...props} />}
+          />
+          <Route
+            path="/aktor"
+            render={props => <Aktor auth={auth} {...props} />}
+          />
+          <Route
+            path="/callback"
+            render={props => {
+              handleAuthentication(props);
+              return <Callback {...props} />;
+            }}
+          />
+        </div>
+      </Router>
+    );
+  }
+}
