@@ -31,6 +31,6 @@
 
 ### Live Preview:
 
-Link: [TV Movie](https://tv-movie.herokuapp.com/)
+Link: [TV Movie](https://tv-movie.netlify.com)
 
 > Jika data dari Open API TV Maze tidak tampil maka pada browser harus dinonaktifkan dahulu Mix-Content agar API dapat tampil. Hal ini dikarenakan data dari Open API TV Maze menggunakan protokol HTTP. Berikut cara menonaktifkan Mix-Content [link](https://pearsonnacommunity.force.com/support/s/article/How-to-display-mixed-content-with-Google-Chrome-Internet-Explorer-or-Firefox-1408394589290)
