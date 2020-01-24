@@ -53,16 +53,9 @@ class App extends Component {
           />
           <Menu.Menu position="right">
             <Menu.Item>
-              {!isAuthenticated() && (
-                <Button onClick={this.login.bind(this)} inverted color="green">
-                  Log In
-                </Button>
-              )}
-              {isAuthenticated() && (
-                <Button onClick={this.logout.bind(this)} inverted color="red">
-                  Log Out
-                </Button>
-              )}
+              <Button disabled inverted color="green">
+                Log In
+              </Button>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
